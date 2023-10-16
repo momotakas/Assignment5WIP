@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin="">
+</script>
+ <style type="text/css">
+ #issmap { height: 480px; }
+ </style>    
+<title></title>
+</head>
+<body>
+<h1>Air Quality Map</h1>
+
+<div style="clear: both;" id="thismap"></div>
+
+
+<script type="text/javascript">
+// open street map stuff
+
+const myMap = L.map('thismap').setView([0,0], 1);
+const attribution =
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+
+const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const tiles = L.tileLayer(tileUrl, { attribution });
+tiles.addTo(thismap);
+const marker = L.marker([0, 0]).addTo(myMap);
+const zoomLevel = 5;
+
+// this won't work in fetch() in the browser - why?
+const aq_url = "https://api.openaq.org/v2/latest";
+
+// add your code below
+
+
+
+
+</script>
+</body>
+</html>
